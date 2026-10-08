@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Harvest Food</title>
+
+    <link rel="stylesheet" href="landpage.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+    <nav>
+        <h2>🍽️ <span>The Harvest</span></h2>
+
+        <div class="nav-menu">
+
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#promo">Promo</a>
+            <a href="#testimoni">Testimoni</a>
+            <a href="#qna">Q&A</a>
+            <a href="#lokasi">Lokasi</a>
+
+        </div>
+
+        <button class="cart-btn" onclick="lihatKeranjang()">
+            🛒 <span id="jumlah">0</span>
+        </button>
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <small>WELCOME TO THE HARVEST</small>
+
+        <h1>
+            Nikmati Rasa,
+            <span>Ciptakan Cerita.</span>
+        </h1>
+
+        <p>
+            Sajian pilihan dari berbagai negara dengan
+            cita rasa istimewa untuk menemani setiap momenmu.
+        </p>
+
+        <div class="hero-button">
+
+            <a href="#menu" class="btn">
+                🍽️ Lihat Menu
+            </a>
+
+            <a href="#promo" class="btn-outline">
+                🎉 Lihat Promo
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+        🍝
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div>
+        <span>🍴</span>
+        <h3>Menu Beragam</h3>
+        <p>Berbagai pilihan makanan favorit.</p>
+    </div>
+
+    <div>
+        <span>✨</span>
+        <h3>Rasa Berkualitas</h3>
+        <p>Dibuat dengan bahan pilihan.</p>
+    </div>
+
+    <div>
+        <span>💝</span>
+        <h3>Harga Bersahabat</h3>
+        <p>Nikmat tanpa membuat kantong berat.</p>
+    </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section id="menu">
+
+    <small>OUR MENU</small>
+
+    <h2>Menu Favorit Kami</h2>
+
+    <p class="section-text">
+        Pilih makanan favoritmu dan nikmati cita rasa
+        terbaik dari The Harvest.
+    </p>
+
+
+    <div class="filter">
+
+        <button onclick="filterMenu('Semua')">
+            Semua
+        </button>
+
+        <button onclick="filterMenu('Western')">
+            Western
+        </button>
+
+        <button onclick="filterMenu('Korean')">
+            Korean
+        </button>
+
+        <button onclick="filterMenu('Chinese')">
+            Chinese
+        </button>
+
+        <button onclick="filterMenu('Nusantara')">
+            Nusantara
+        </button>
+
+        <button onclick="filterMenu('Dessert')">
+            Dessert
+        </button>
+
+        <button onclick="filterMenu('Minuman')">
+            Minuman
+        </button>
+
+    </div>
+
+
+    <div class="menu" id="menuList"></div>
+
+</section>
+
+
+<!-- ================= KERANJANG ================= -->
+
+<section class="keranjang">
+
+    <small>YOUR ORDER</small>
+
+    <h2>🛒 Keranjang Pesanan</h2>
+
+    <div id="cartList">
+        Keranjang masih kosong.
+    </div>
+
+
+    <!-- PEMBAYARAN -->
+
+    <div class="payment">
+
+        <h3>💳 Pembayaran</h3>
+
+        <p>
+            Total yang harus dibayar:
+        </p>
+
+        <div class="payment-total" id="paymentTotal">
+            Rp0
+        </div>
+
+
+        <label for="uangPelanggan">
+            Uang Pelanggan
+        </label>
+
+        <input
+            type="number"
+            id="uangPelanggan"
+            placeholder="Contoh: 100000"
+            min="0"
+        >
+
+
+        <button
+            class="hitung-btn"
+            onclick="hitungKembalian()">
+
+            💰 Hitung Pembayaran
+
+        </button>
+
+
+        <div id="hasilPembayaran"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROMO ================= -->
+
+<section class="promo-menu" id="promo">
+
+    <small>SPECIAL OFFER</small>
+
+    <h2>🎉 Promo Spesial</h2>
+
+    <p class="section-text">
+        Nikmati menu pilihan dengan harga lebih hemat.
+    </p>
+
+    <div class="promo-list" id="promoList"></div>
+
+</section>
+
+
+<!-- ================= TESTIMONI ================= -->
+
+<section class="testimoni" id="testimoni">
+
+    <small>CUSTOMER REVIEW</small>
+
+    <h2>💬 Apa Kata Mereka?</h2>
+
+    <p class="section-text">
+        Pengalaman pelanggan setelah menikmati The Harvest.
+    </p>
+
+
+    <div class="testimoni-list">
+
+        <div class="testimoni-card">
+
+            <div class="bintang">
+                ★★★★★
+            </div>
+
+            <p>
+                "Makanannya enak, porsinya pas dan
+                pelayanannya sangat cepat."
+            </p>
+
+            <h3>Aulia</h3>
+
+            <span>Pelanggan</span>
+
+        </div>
+
+
+        <div class="testimoni-card">
+
+            <div class="bintang">
+                ★★★★★
+            </div>
+
+            <p>
+                "Chicken Steak-nya enak banget.
+                Tempatnya nyaman dan bersih."
+            </p>
+
+            <h3>Nabila</h3>
+
+            <span>Pelanggan</span>
+
+        </div>
+
+
+        <div class="testimoni-card">
+
+            <div class="bintang">
+                ★★★★☆
+            </div>
+
+            <p>
+                "Banyak pilihan makanan dan
+                harganya cukup terjangkau."
+            </p>
+
+            <h3>Fajar</h3>
+
+            <span>Pelanggan</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= Q&A ================= -->
+
+<section class="qna" id="qna">
+
+    <small>FAQ</small>
+
+    <h2>❓ Pertanyaan Umum</h2>
+
+    <p class="section-text">
+        Temukan jawaban dari pertanyaan yang sering ditanyakan.
+    </p>
+
+
+    <div class="qna-list">
+
+        <details>
+
+            <summary>
+                Kapan The Harvest buka?
+            </summary>
+
+            <p>
+                The Harvest buka setiap hari
+                pukul 10.00 sampai 22.00 WIB.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Apakah ada promo setiap minggunya?
+            </summary>
+
+            <p>
+                Ya, The Harvest menyediakan promo menarik
+                setiap minggunya. Silakan cek bagian Promo
+                untuk melihat penawaran terbaru.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Menu apa yang paling best seller?
+            </summary>
+
+            <p>
+                Menu yang paling best seller adalah
+                Chicken Steak, Spaghetti, dan Korean Chicken.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Apa saja menu best seller lainnya?
+            </summary>
+
+            <p>
+                Selain itu, Nasi Goreng, Rendang,
+                Tteokbokki, dan Brownies juga menjadi
+                menu favorit pelanggan.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EMAIL ================= -->
+
+<section class="email">
+
+    <div class="email-text">
+
+        <small>CONTACT US</small>
+
+        <h2>💬 Hubungi Kami</h2>
+
+        <p>
+            Jika ingin melakukan pemesanan atau bertanya,
+            silakan hubungi The Harvest melalui WhatsApp.
+        </p>
+
+        <a
+            href="https://wa.me/628584258522?text=Halo%20The%20Harvest,%20saya%20ingin%20memesan."
+            target="_blank"
+            class="email-btn">
+
+            💬 Chat WhatsApp
+
+        </a>
+
+    </div>
+
+    <div class="email-icon">
+        💬
+    </div>
+
+</section>
+
+<!-- ================= LOKASI ================= -->
+
+<section class="lokasi" id="lokasi">
+
+    <small>VISIT US</small>
+
+    <h2>📍 Temukan Kami</h2>
+
+    <p>
+        Jl. No. 123, Bandung
+    </p>
+
+    <p>
+        ⏰ 10.00 - 22.00 WIB
+    </p>
+
+
+    <a
+        href="https://www.google.com/maps/search/?api=1&query=Bandung"
+        target="_blank"
+        class="btn">
+
+        📍 Lihat Google Maps
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>
+        🍽️ The Harvest
+    </h2>
+
+    <p>
+        Rasa enak, suasana nyaman, momen berkesan.
+    </p>
+
+    <div class="footer-line"></div>
+
+    <p class="copyright">
+        © 2026 The Harvest. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="landpage.js"></script>
+
+</body>
+</html>
