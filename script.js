@@ -59,7 +59,7 @@ const menu = [
         "Kwetiau",
         "Chinese",
         24000,
-        "https://commons.wikimedia.org/wiki/Special:FilePath/Indonesian%20fried%20kwetiau.JPG"
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Indonesian_fried_kwetiau.JPG"
     ],
 
 
